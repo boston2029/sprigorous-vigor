@@ -2,10 +2,10 @@
 First time? Check out the tutorial game:
 https://sprig.hackclub.com/gallery/getting_started
 
-@title: 
-@author: 
+@title: Sprigorous Vigor
+@author: boston2029
 @tags: []
-@addedOn: 2024-00-00
+@addedOn: 2024-07-27
 */
 
 const player = "p"
@@ -242,6 +242,25 @@ w..w..wwwwwwwwwwwww
 w.....wwwwwwwwwwwww
 wwwwwwwwwwwwwwwwwww`, // surprise
   map`
+w.w..............w
+.w.w............w.
+w.w.w..........w..
+.w.w.w......www...
+w.w.w...bbbbbb....
+.b.w.w.w....w.....
+b.b.w.w....w......
+.b.b.wwwwww.....p.
+b.b.b...ww........
+.b.b.b.www........
+b.b.b.w...w.......
+.www.b.w...w......
+bw.wb.w.....w.....
+.bnbwbww.....b....
+b...b.........w...
+.b.b.b.........w..
+b.b.b.w.........w.
+.b.b.w.w.........w`, // surprise
+  map`
 bb.wwwwwwww
 bnbw.....cw
 .bbw..wwwww
@@ -428,7 +447,6 @@ bbb`)
         })
         let directionRight = true
         moverInterval = setInterval(function(){
-          // console.log(getFirst(portal).x)
           if (getFirst(portal).x==10) {
             directionRight=false
           }
@@ -440,13 +458,16 @@ bbb`)
         break
       case 12:
         clearInterval(moverInterval)
+        addText("surprise lol", {x:7,y:14, color: color`2`})
+        break
+      case 14:
         addText("who do you choose", {y:12, color: color`1`})
         break
-      case 13:
+      case 15:
         addText("you won!", {color: color`0`, y:1})
         addText("press l to replay!", {color: color`0`, y:3})
-        addText("or mess with", {color: color`0`, y:12})
-        addText("these pushables!", {color: color`0`, y:13})
+        addText("or mess with", {color: color`0`, y:13})
+        addText("these pushables!", {color: color`0`, y:14})
         break
     }
   }
